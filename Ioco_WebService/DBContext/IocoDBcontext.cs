@@ -200,14 +200,14 @@ namespace Ioco_WebService.DBContext
 				string ldfDB = AppDomain.CurrentDomain.BaseDirectory + @"App_Data\ioco.ldf";
 				SqlConnection myConn = new SqlConnection(@"Server=(LocalDB)\MSSQLLocalDB;Integrated security=SSPI;database=master");
 
-				string str = "CREATE DATABASE MyDatabase ON PRIMARY " +
+				string str = "CREATE DATABASE ioco ON PRIMARY " +
 					"(NAME = MyDatabase_Data, " +
 					"FILENAME = '" + checkDB + "', " +
-					 "SIZE = 2MB, MAXSIZE = 10MB, FILEGROWTH = 10%) " +
+					 "SIZE = 2MB, MAXSIZE = 50MB, FILEGROWTH = 10%) " +
 					 "LOG ON (NAME = ioco_Log, " +
 					 "FILENAME = '" + ldfDB + "', " +
-					 "SIZE = 50MB, " +
-					 "MAXSIZE = 1GB, " +
+					 "SIZE = 2MB, " +
+					 "MAXSIZE = 50MB, " +
 					 "FILEGROWTH = 10%)";
 				SqlCommand myCommand = new SqlCommand(str, myConn);
 				try
