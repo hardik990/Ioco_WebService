@@ -16,6 +16,7 @@ namespace Ioco_WebService.DBContext
 
 		public KeyValuePair<bool, string> AddInvoice(Invoice _Invoice)
 		{
+			// we can also create different API for configure DB & table.
 			if (checkTable())
 			{
 				using (var conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString))
@@ -62,6 +63,7 @@ namespace Ioco_WebService.DBContext
 		}
 		public KeyValuePair<bool, dynamic> GetInvoice()
 		{
+			// we can also create different API for configure DB & table.
 			if (checkTable())
 			{
 				List<Invoice> lstresult = new List<Invoice>();
@@ -131,6 +133,7 @@ namespace Ioco_WebService.DBContext
 		}
 		public KeyValuePair<bool, dynamic> GetInvoiceById(long invoiceID)
 		{
+			// we can also create different API for configure DB & table.
 			if (checkTable())
 			{
 				Invoice lstresult = new Invoice();
